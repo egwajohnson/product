@@ -5,9 +5,7 @@ export const ProductCard = ({ product, onAddToCart = () => {} }) => {
   }
   return (
     <>
-      <div
-        style={{ border: "1px solid #ccc", margin: "10px", padding: "10px" }}
-      >
+      <div className="item">
         <img
           src={product.image}
           alt={product.title}
@@ -15,7 +13,7 @@ export const ProductCard = ({ product, onAddToCart = () => {} }) => {
         />
         <h3>{product.title}</h3>
         <p>${product.price}</p>
-        <button onClick={onAddToCart}>Add to Cart</button>
+        <button className="btn" onClick={onAddToCart}>Add to Cart</button>
       </div>
     </>
   );

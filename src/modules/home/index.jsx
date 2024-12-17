@@ -31,15 +31,8 @@ const Home = () => {
       <div className="main">
         {Object.entries(groupedProducts).map(([category, items]) => (
           <div key={category} className="childmain">
-            <h2>{category}</h2>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "10px",
-                backgroundColor: "blue",
-              }}
-            >
+            <h2 className="categories">{category}</h2>
+            <div className="mainitem">
               {items.map((item) => {
                 console.log("Item being passed to ProductCard:", item);
                 return (

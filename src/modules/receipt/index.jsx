@@ -6,14 +6,14 @@ const Receipt = () => {
   const { cart, total, transactionId } = state;
 
   return (
-    <div>
+    <div className="rept">
       <h2>Payment Receipt</h2>
       <p>Transaction ID: {transactionId}</p>
       <p>Date: {new Date().toLocaleString()}</p>
       <ul>
-        {cart.map((item, next) => (
+        {cart.map((item) => (
           <li key={item.Date}>
-            {item.title} - ${item.price} x {item.quantity + next}
+            {item.title} - ${item.price} x {item.quantity}
           </li>
         ))}
       </ul>

@@ -4,7 +4,6 @@ import AppLayout from "../../layout";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-  cons[(Cart, setCart)] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,24 +21,20 @@ const ProductList = () => {
 
   const handleAddToCart = (product) => {
     console.log("Added to cart:", product);
-    setCart((prev) => {
-      const existItem = prev.find((item) => item.id === product.id);
-      if (existItem) {
-        return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      } else {
-        return [...prev, { ...product, quantity: 1 }];
-      }
-    });
   };
 
   return (
     <AppLayout>
       <div>
-        <h1>Product List</h1>
+        <h1
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "#f78536",
+          }}
+        >
+          Product List
+        </h1>
         {products.length > 0 ? (
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {products.map((product) => (
