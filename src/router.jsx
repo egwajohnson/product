@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./modules/home";
-import ProductList from "./modules/products";
+import ProductCard from "./modules/Product";
 import Checkout from "./layout/component/check";
 import CartIcon from "./modules/icons";
 import Error from "./modules/error";
@@ -11,8 +11,8 @@ export const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/product",
-    element: <ProductList />,
+    path: "/Product",
+    element: <ProductCard />,
   },
   {
     path: "/check",

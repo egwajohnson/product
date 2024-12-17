@@ -12,9 +12,8 @@ function Header() {
           <li>
             <Link to="/checkout">Checkout</Link>
           </li>
-          {/* <Route path="/receipt" element={<Receipt />} /> */}
           <li>
-            <Link to="/product">Products</Link>
+            <Link to="/list">List</Link>
           </li>
         </ul>
       </nav>

@@ -11,9 +11,9 @@ const Receipt = () => {
       <p>Transaction ID: {transactionId}</p>
       <p>Date: {new Date().toLocaleString()}</p>
       <ul>
-        {cart.map((item) => (
-          <li key={item.id}>
-            {item.title} - ${item.price} x {item.quantity}
+        {cart.map((item, next) => (
+          <li key={item.Date}>
+            {item.title} - ${item.price} x {item.quantity + next}
           </li>
         ))}
       </ul>

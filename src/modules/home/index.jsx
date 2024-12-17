@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useCart } from "../../context/CartContext";
 import AppLayout from "../../layout";
-import { ProductCard } from "../../layout/component/ProductCard";
+import { ProductCard } from "../Product";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -28,23 +28,33 @@ const Home = () => {
 
   return (
     <AppLayout>
-      <div>
+      <div className="main">
         {Object.entries(groupedProducts).map(([category, items]) => (
-          <div key={category} className="main">
+          <div key={category} className="childmain">
             <h2>{category}</h2>
-            <div className="childmain">
-              {items.map((item) => (
-                <ProductCard
-                  key={item.id}
-                  product={item}
-                  onAddToCart={() =>
-                    dispatch({
-                      type: "ADD_TO_CART",
-                      payload: { ...item, quantity: 1 },
-                    })
-                  }
-                />
-              ))}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px",
+                backgroundColor: "blue",
+              }}
+            >
+              {items.map((item) => {
+                console.log("Item being passed to ProductCard:", item);
+                return (
+                  <ProductCard
+                    key={item.id}
+                    product={item}
+                    onAddToCart={() =>
+                      dispatch({
+                        type: "ADD_TO_CART",
+                        payload: { ...item, quantity: 1 },
+                      })
+                    }
+                  />
+                );
+              })}
             </div>
           </div>
         ))}
