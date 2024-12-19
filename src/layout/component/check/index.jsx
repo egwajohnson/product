@@ -18,24 +18,29 @@ const Checkout = () => {
   };
 
   return (
-    <div>
-      <h2>Checkout</h2>
-      <ul>
-        {state.cart.map((item) => (
-          <li key={item.id}>
-            {item.title} - ${item.price} x {item.quantity}
-            <button
-              onClick={() =>
-                dispatch({ type: "REMOVE_FROM_CART", payload: { id: item.id } })
-              }
-            >
-              Remove
-            </button>
-          </li>
-        ))}
-      </ul>
-      <h3>Total: ${total.toFixed(2)}</h3>
-      <button onClick={handlePayNow}>Pay Now</button>
+    <div className="check">
+      <div className="checkin">
+        <h2>Checkout</h2>
+        <ul>
+          {state.cart.map((item) => (
+            <li key={item.id}>
+              {item.title} - ${item.price} x {item.quantity}
+              <button
+                onClick={() =>
+                  dispatch({
+                    type: "REMOVE_FROM_CART",
+                    payload: { id: item.id },
+                  })
+                }
+              >
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+        <h3>Total: ${total.toFixed(2)}</h3>
+        <button onClick={handlePayNow}>Pay Now</button>
+      </div>
     </div>
   );
 };

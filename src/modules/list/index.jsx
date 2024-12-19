@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { ProductCard } from "../Product";
 import AppLayout from "../../layout";
+import { useCart } from "../../context/CartContext";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-
+  const { dispatch } = useCart();
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -37,11 +38,16 @@ const ProductList = () => {
         </h1>
         {products.length > 0 ? (
           <div style={{ display: "flex", flexWrap: "wrap" }}>
-            {products.map((product) => (
+            {products.map((item) => (
               <ProductCard
-                key={product.id}
-                product={product}
-                onAddToCart={() => handleAddToCart(product)}
+                key={item.id}
+                product={item}
+                onAddToCart={() =>
+                  dispatch({
+                    type: "ADD_TO_CART",
+                    payload: { ...item, quantity: 1 },
+                  })
+                }
               />
             ))}
           </div>

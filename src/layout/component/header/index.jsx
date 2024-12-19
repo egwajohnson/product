@@ -7,13 +7,19 @@ function Header() {
       <nav className="nav">
         <ul className="nav-links">
           <li>
-            <Link to="/" className="a">Home</Link>
+            <Link to="/" className="a">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/checkout" className="a">Checkout</Link>
+            <Link to="/checkout" className="a">
+              CartItems
+            </Link>
           </li>
           <li>
-            <Link to="/list" className="a">ProductList</Link>
+            <Link to="/list" className="a">
+              ProductList
+            </Link>
           </li>
         </ul>
       </nav>
