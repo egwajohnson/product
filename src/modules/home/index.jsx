@@ -24,7 +24,7 @@ const Home = () => {
     return acc;
   }, {});
 
-  console.log("Grouped Products:", groupedProducts); // Debugging
+  console.log("Grouped Products:", groupedProducts);
 
   return (
     <AppLayout>

@@ -20,9 +20,9 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
-  const handleAddToCart = (product) => {
-    console.log("Added to cart:", product);
-  };
+  // const handleAddToCart = (product) => {
+  //   console.log("Added to cart:", product);
+  // };
 
   return (
     <AppLayout>
@@ -37,7 +37,7 @@ const ProductList = () => {
           Product List
         </h1>
         {products.length > 0 ? (
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", marginTop: "6%" }}>
             {products.map((item) => (
               <ProductCard
                 key={item.id}

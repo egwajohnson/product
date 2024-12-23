@@ -5,7 +5,6 @@ import Home from "./modules/home";
 import Checkout from "./layout/component/check";
 import Receipt from "./modules/receipt";
 import CartIcon from "./modules/icons";
-// import { ProductCard } from "./modules/Product";
 import ProductList from "./modules/list";
 
 function App() {
