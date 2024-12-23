@@ -23,7 +23,7 @@ const Checkout = () => {
         <h2>Checkout</h2>
         <ul>
           {state.cart.map((item) => (
-            <li key={item.id}>
+            <li key={item.date}>
               {item.title} - ${item.price} x {item.quantity}
               <button
                 onClick={() =>
